@@ -1,0 +1,9 @@
+table {
+    background-color: rgb(64, 59, 52);
+}
+
+table > thead th {
+    font-size: 10px;
+    background-color: bisque;
+    padding: 0px 5px;
+}
