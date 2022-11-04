@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Main.css";
+import styles from "./Main.module.css";
 
 import FleetTable from "../components/FleetTable/FleetTable";
 import NewVehicle from "../components/NewVehicle/NewVehicle";
@@ -61,7 +61,7 @@ function Main() {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div>
         <NewVehicle onNewVehicle={newVehicleHandler} onAddClicked={addClickedHandler}/>
         {clicked && <VehicleFilter

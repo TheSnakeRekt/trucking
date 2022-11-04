@@ -1,9 +1,9 @@
-import "./FleetTable.css";
+import styles from "./FleetTable.module.css";
 import FleetAtom from "../../atoms/FleetAtom";
 
 const FleetTable = (props) => {
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
           <th>License Plate</th>

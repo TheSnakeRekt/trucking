@@ -1,4 +1,4 @@
-
+import styles from './VehicleFilter.module.css'
 
 const VehicleFilter = (props) => {
     const brands = props.vehicles.map(vehicle=>(vehicle.brand));
@@ -7,7 +7,7 @@ const VehicleFilter = (props) => {
         props.onVehicleFilter(event.target.value);
     };
 
-    return (<div>
+    return (<div className={styles.filter}>
         <select onChange={changeHandler}>
             <option disabled>Select a Brand</option>
             <option value="all">No filter</option>

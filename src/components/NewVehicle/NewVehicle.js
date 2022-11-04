@@ -1,4 +1,4 @@
-import "./NewVehicle.css";
+import styles from "./NewVehicle.module.css";
 import { useState } from "react";
 
 const NewVehicle = (props) => {
@@ -36,14 +36,14 @@ const NewVehicle = (props) => {
 
   const addVehicleButton = (
     <div>
-      <button className="add-vehicle" onClick={newVehicleClickHandler}>
+      <button className={styles['add-vehicle']} onClick={newVehicleClickHandler}>
         +
       </button>
     </div>
   );
 
   const addVehicleForm = (
-    <div className="form-container">
+    <div className={styles['form-container']}>
       <form onSubmit={clickHandler}>
         <div>
           <span>
@@ -89,7 +89,7 @@ const NewVehicle = (props) => {
           <button type="submit">Create</button>
           <button
             type="button"
-            className="cancel-button"
+            className={styles['cancel-button']}
             onClick={newVehicleClickHandler}
           >
             Cancel
