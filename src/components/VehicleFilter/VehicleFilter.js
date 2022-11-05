@@ -1,7 +1,7 @@
 import styles from './VehicleFilter.module.css'
 
 const VehicleFilter = (props) => {
-    const brands = props.vehicles.map(vehicle=>(vehicle.brand));
+    const brands = props.brands;
 
     const changeHandler = (event) => {
         props.onVehicleFilter(event.target.value);
@@ -10,7 +10,7 @@ const VehicleFilter = (props) => {
     return (<div className={styles.filter}>
         <select onChange={changeHandler}>
             <option disabled>Select a Brand</option>
-            <option value="all">No filter</option>
+            <option value="all" defaultValue>No filter</option>
             {brands.map((brand, ind)=>(<option value={brand} key={ind}>{brand}</option>))}
         </select>
     </div>);

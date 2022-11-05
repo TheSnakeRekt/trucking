@@ -1,25 +1,34 @@
 import styles from "./FleetTable.module.css";
-import FleetAtom from "../../atoms/FleetAtom";
+import FleetItem from "../../UI/FleetItem";
+import NewVehicle from "../NewVehicle/NewVehicle";
+import VehicleFilter from "../VehicleFilter/VehicleFilter";
 
 const FleetTable = (props) => {
+  const vehicles = props.data.vehicles
+
   return (
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          <th>License Plate</th>
-          <th>Brand</th>
-          <th>Model & Year</th>
-          <th>Mileage</th>
-          <th>Driver</th>
-          <th>Route</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.data.map((truck) => (
-          <FleetAtom vehicle={truck} key={truck.id} />
-        ))}
-      </tbody>
-    </table>
+    <div className={styles["table-container"]}>
+        <VehicleFilter
+          brands={props.data.brands}
+          onVehicleFilter={props.data.handleFilterEvent}
+        />
+      <div className={styles.table}>
+        <table>
+          <thead>
+            <tr>{props.children}</tr>
+          </thead>
+          <tbody>
+            {vehicles.map((truck) => (
+              <FleetItem vehicle={truck} key={truck.id} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <NewVehicle
+        onNewVehicle={props.data.newVehicleHandler}
+        onAddClicked={props.data.addClickedHandler}
+      />
+    </div>
   );
 };
 

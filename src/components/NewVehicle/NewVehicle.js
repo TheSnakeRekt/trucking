@@ -1,5 +1,7 @@
-import styles from "./NewVehicle.module.css";
+import "./NewVehicle.module.css";
 import { useState } from "react";
+import RoundButton from "../../UI/RoundButton";
+import Form from "../../UI/Form";
 
 const NewVehicle = (props) => {
   const originalState = {
@@ -34,72 +36,7 @@ const NewVehicle = (props) => {
     props.onAddClicked();
   };
 
-  const addVehicleButton = (
-    <div>
-      <button className={styles['add-vehicle']} onClick={newVehicleClickHandler}>
-        +
-      </button>
-    </div>
-  );
-
-  const addVehicleForm = (
-    <div className={styles['form-container']}>
-      <form onSubmit={clickHandler}>
-        <div>
-          <span>
-            <label htmlFor="id">License Plate:</label>
-            <input id="id" value={vehicle.id} onChange={handleChange} />
-          </span>
-          <span>
-            <label htmlFor="brand">Brand:</label>
-            <input id="brand" value={vehicle.brand} onChange={handleChange} />
-          </span>
-        </div>
-        <div>
-          <span>
-            <label htmlFor="model">Model:</label>
-            <input id="model" value={vehicle.model} onChange={handleChange} />
-          </span>
-          <span>
-            <label htmlFor="year">Year:</label>
-            <input id="year" value={vehicle.year} onChange={handleChange} />
-          </span>
-        </div>
-        <div>
-          <span>
-            <label htmlFor="mileage">Mileage:</label>
-            <input
-              id="mileage"
-              value={vehicle.mileage}
-              onChange={handleChange}
-            />
-          </span>
-          <span>
-            <label htmlFor="driver">Driver:</label>
-            <input id="driver" value={vehicle.driver} onChange={handleChange} />
-          </span>
-        </div>
-        <div>
-          <span>
-            <label htmlFor="route">Route:</label>
-            <input id="route" value={vehicle.route} onChange={handleChange} />
-          </span>
-        </div>
-        <div>
-          <button type="submit">Create</button>
-          <button
-            type="button"
-            className={styles['cancel-button']}
-            onClick={newVehicleClickHandler}
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-
-  return !clicked ? addVehicleButton : addVehicleForm;
+  return !clicked ? <RoundButton buttonClickHandler={newVehicleClickHandler}/> : <Form vehicle={vehicle} newVehicleClickHandler={newVehicleClickHandler} clickHandler={clickHandler} handleChange={handleChange} />;
 };
 
 export default NewVehicle;

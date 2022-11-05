@@ -1,28 +1,5 @@
-form {
-  display: flexbox;
-  margin: 15px;
-  width: 50%;
-}
-
 .form-container {
-    max-width: 28%;
-}
-
-.add-vehicle {
-  margin: 3px;
-  border-radius: 100%;
-  border-color: black;
-  border-width: 1px;
-  padding:0;
-  color: blue;
-  cursor: pointer;
-  height: 20px;
-  width: 20px;   
-}
-
-.add-vehicle:hover {
-  background: grey;
-  color: aquamarine;
+  max-width: 28%;
 }
 
 .cancel-button {

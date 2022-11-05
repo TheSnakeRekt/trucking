@@ -1,9 +1,32 @@
-.table {
-    background-color: rgb(64, 59, 52);
+div {
+  display: inherit;
 }
 
-.table > thead th {
-    font-size: 10px;
-    background-color: bisque;
-    padding: 0px 5px;
+.table-container {
+  display: grid;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-between;
+  min-height: 300px;
+}
+
+.table {
+  display: inherit;
+  justify-content: center;
+}
+
+.table > table {
+  background-color: rgb(64, 59, 52);
+  height: auto;
+}
+
+.table thead th {
+  font-size: 10px;
+  background-color: bisque;
+  padding: 0px 5px;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
 }

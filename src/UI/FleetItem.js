@@ -1,6 +1,6 @@
-import './FleetAtom.css'
+import './FleetItem.module.css'
 
-const FleetAtom = (props) => {
+const FleetItem = (props) => {
   const vehicle = props.vehicle;
 
 
@@ -18,4 +18,4 @@ const FleetAtom = (props) => {
   );
 };
 
-export default FleetAtom;
+export default FleetItem;

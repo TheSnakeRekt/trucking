@@ -1,0 +1,18 @@
+form {
+  display: inherit;
+  margin-top: 15px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+form.invalid div input {
+ border-color: red;
+}
+
+input, label {
+  display:block;
+}
