@@ -9,7 +9,7 @@ form div {
   margin-bottom: 5px;
 }
 
-form.invalid div input {
+input.invalid {
  border-color: red;
 }
 

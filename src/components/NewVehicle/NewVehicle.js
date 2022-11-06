@@ -1,7 +1,7 @@
 import "./NewVehicle.module.css";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import RoundButton from "../../UI/RoundButton";
-import Form from "../../UI/Form";
+import { ModalRef } from "../../UI/Modal";
 
 const NewVehicle = (props) => {
   const originalState = {
@@ -36,7 +36,20 @@ const NewVehicle = (props) => {
     props.onAddClicked();
   };
 
-  return !clicked ? <RoundButton buttonClickHandler={newVehicleClickHandler}/> : <Form vehicle={vehicle} newVehicleClickHandler={newVehicleClickHandler} clickHandler={clickHandler} handleChange={handleChange} />;
+  return !clicked ? (
+    <RoundButton buttonClickHandler={newVehicleClickHandler} />
+  ) : (
+    <Fragment>
+      <RoundButton buttonClickHandler={newVehicleClickHandler} />
+      <ModalRef
+        onConfirm={newVehicleClickHandler}
+        vehicle={vehicle}
+        newVehicleClickHandler={newVehicleClickHandler}
+        clickHandler={clickHandler}
+        handleChange={handleChange}
+      ></ModalRef>
+    </Fragment>
+  );
 };
 
 export default NewVehicle;
