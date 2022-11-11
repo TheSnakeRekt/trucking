@@ -2,6 +2,7 @@ import styles from "./FleetTable.module.css";
 import FleetItem from "../../UI/FleetItem";
 import NewVehicle from "../NewVehicle/NewVehicle";
 import VehicleFilter from "../VehicleFilter/VehicleFilter";
+import vehicleActions from "../../actions/vehicle.actions";
 
 const FleetTable = (props) => {
   const vehicles = props.data.vehicles
@@ -10,7 +11,7 @@ const FleetTable = (props) => {
     <div className={styles["table-container"]}>
         <VehicleFilter
           brands={props.data.brands}
-          onVehicleFilter={props.data.handleFilterEvent}
+          onVehicleFilter={(val)=> props.data.dispatch({type:vehicleActions.FILTER, data: val})}
         />
       <div className={styles.table}>
         <table>
@@ -25,7 +26,7 @@ const FleetTable = (props) => {
         </table>
       </div>
       <NewVehicle
-        onNewVehicle={props.data.newVehicleHandler}
+        onNewVehicle={(val) => {props.data.dispatch({type:vehicleActions.ADD, data: val})}}
         onAddClicked={props.data.addClickedHandler}
       />
     </div>

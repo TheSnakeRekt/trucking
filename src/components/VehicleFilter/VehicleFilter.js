@@ -10,7 +10,7 @@ const VehicleFilter = (props) => {
     return (<div className={styles.filter}>
         <select onChange={changeHandler}>
             <option disabled>Select a Brand</option>
-            <option value="all" defaultValue>No filter</option>
+            <option value="" defaultValue>No filter</option>
             {brands.map((brand, ind)=>(<option value={brand} key={ind}>{brand}</option>))}
         </select>
     </div>);
